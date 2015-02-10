@@ -9,4 +9,5 @@ RUN apt-get install -y libdb++-dev
 RUN apt-get install -y libqt4-dev libminiupnpc-dev
 RUN apt-get install -y git
 RUN /usr/sbin/useradd -m guest
+EXPOSE 9000
 
