@@ -11,4 +11,5 @@ RUN apt-get install -y git
 RUN apt-get install -y wget
 RUN /usr/sbin/useradd -m guest
 WORKDIR /home/guest
+RUN mkdir /home/guest/data
 EXPOSE 9000
