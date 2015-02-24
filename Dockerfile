@@ -17,4 +17,14 @@ RUN /usr/sbin/useradd -m guest
 WORKDIR /home/guest
 RUN mkdir /home/guest/data
 
+# build
+RUN mkdir -p /usr/src \
+    && cd /usr/src \
+    && git clone https://github.com/uncoin/uncoin.git \
+    && cd /usr/src/uncoin/src \
+    && mkdir obj \
+    && make -f makefile.unix \
+    && install -m 755 uncoind /usr/bin \
+    && rm -rf /usr/src/uncoin
+
 EXPOSE 9000
